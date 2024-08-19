@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.join(root_dir, "packages", "python"))
 def main():
     from taxonomy_tools import helm_data as txm_helm_data
     from taxonomy_tools import utils as txm_utils
+    from taxonomy_tools import metrics as txm_metrics
 
     # Create an ArgumentParser object
     parser = argparse.ArgumentParser(
@@ -199,7 +200,7 @@ def main():
 
         # Plot compacto de todos los nodos contra todos
         if metric_use == "mutual_information":
-            method_use = txm_utils.custom_mi_reg
+            method_use = txm_metrics.node_pair_mutual_info_regression
         else:
             method_use = metric_use
         metric_matrix = nodes_data_df.loc[:, (nodes_data_df != 0).any()].corr(

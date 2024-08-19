@@ -7,8 +7,7 @@ from typing import List, Tuple
 import os
 import json
 from scipy.stats import spearmanr, kendalltau
-from sklearn.feature_selection import mutual_info_regression
-
+from . import metrics as txm_metrics
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.normpath(os.path.join(current_dir, os.pardir, os.pardir, os.pardir))
@@ -331,13 +330,6 @@ def get_taxonomy_datasets_node_dataframe(
     return data_df
 
 
-def custom_mi_reg(a, b):
-    a = a.reshape(-1, 1)
-    if np.sum(a) == 0 or np.sum(b) == 0:
-        return np.NaN
-    return mutual_info_regression(a, b)[0]
-
-
 def extract_edge_metric(node_name, taxonomy_graph, data_matrix, method_name) -> dict:
     """
     Get a node metric to its downstream nodes and return the data as dict
@@ -377,7 +369,7 @@ def get_taxonomy_nodes_metric(
     """
 
     if method == "mutual_information":
-        method_use = custom_mi_reg
+        method_use = txm_metrics.node_pair_mutual_info_regression
     else:
         method_use = method
 
@@ -505,7 +497,9 @@ def get_taxonomy_per_edge_metric(
             elif method == "kendall":
                 metrics_matrix_imbalanced[x, y], _ = kendalltau(values_0, values_1)
             elif method == "mutual_information":
-                metrics_matrix_imbalanced[x, y] = custom_mi_reg(values_0, values_1)
+                metrics_matrix_imbalanced[x, y] = (
+                    txm_metrics.node_pair_mutual_info_regression(values_0, values_1)
+                )
             else:
                 raise ValueError("Unknown method for metric : %s" % method)
         else:
