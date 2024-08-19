@@ -1,57 +1,5 @@
 {
-    "LegalSupport": [
-        {
-            "name": "legal_support,method=multiple_choice_joint", 
-            "suffix" : "---",
-            "metric": "exact_match", 
-            "field": "mean", 
-            "split": "test"
-        }
-    ],
-    "Synthetic_reasoning_(natural_language)": [
-        {
-            "name": "synthetic_reasoning_natural:difficulty=hard",
-            "suffix" : "---",
-            "metric": "f1_set_match",
-            "field": "mean",
-            "split": "test"
-        },
-        {
-            "name": "synthetic_reasoning_natural:difficulty=easy",
-            "metric": "f1_set_match",
-            "suffix" : "---",
-            "field": "mean",
-            "split": "test"
-        }
-    ],
-    "Synthetic_reasoning_(abstract_symbols)---pattern_match": [
-        {
-            "name": "synthetic_reasoning:mode=pattern_match",
-            "suffix" : "---",
-            "metric": "quasi_exact_match",
-            "field": "mean",
-            "split": "test"
-        }
-    ],
-    "Synthetic_reasoning_(abstract_symbols)---variable_sustitution": [
-        {
-            "name": "synthetic_reasoning:mode=variable_substitution",
-            "suffix" : "---",
-            "metric": "quasi_exact_match",
-            "field": "mean",
-            "split": "test"
-        }
-    ],
-    "Synthetic_reasoning_(abstract_symbols)---induction": [
-        {
-            "name": "synthetic_reasoning:mode=induction",
-            "suffix" : "---",
-            "metric": "quasi_exact_match",
-            "field": "mean",
-            "split": "test"
-        }
-    ],
-    "bAbI": [
+    "babi_qa_all": [
         {
             "name": "babi_qa:task=all",
             "metric": "quasi_exact_match",
@@ -60,16 +8,326 @@
             "split": "test"
         }
     ],
-    "LSAT": [
+    "babi_qa_3": [
         {
-            "name": "lsat_qa:task=all",
+            "name": "babi_qa:task=3",
             "metric": "quasi_exact_match",
-            "suffix": "---",
+            "suffix" : "---",
             "field": "mean",
             "split": "test"
         }
     ],
-    "HellaSwag": [
+    "babi_qa_15": [
+        {
+            "name": "babi_qa:task=15",
+            "metric": "quasi_exact_match",
+            "suffix" : "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_19": [
+        {
+            "name": "babi_qa:task=19",
+            "metric": "quasi_exact_match",
+            "suffix" : "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_1": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=1",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_2": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=2",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_3": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=3",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_4": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=4",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_5": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=5",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_6": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=6",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_7": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=7",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_8": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=8",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_9": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=9",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_10": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=10",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_11": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=11",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_12": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=12",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_13": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=13",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_14": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=14",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_15": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=15",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_16": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=16",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_17": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=17",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_18": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=18",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_19": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=19",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "babi_qa_Task_20": [
+        {
+            "suffix": "---",
+            "name": "babi_qa_subtask:compilation=20",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "blimp": [
+        {
+            "name": "blimp:phenomenon=binding,method=multiple_choice_separate_original",
+            "suffix": "---",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "name": "blimp:phenomenon=irregular_forms,method=multiple_choice_separate_original",
+            "suffix": "---",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "name": "blimp:phenomenon=island_effects,method=multiple_choice_separate_original",
+            "suffix": "---",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "name": "blimp:phenomenon=quantifiers,method=multiple_choice_separate_original",
+            "suffix": "---",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "blimp_binding" : [
+        {
+            "name" : "blimp:phenomenon=binding,method=multiple_choice_separate_original",
+            "metric": "exact_match",
+            "field" : "mean",
+            "split": "test",
+            "suffix": "---"
+
+        }
+    ],
+    "blimp_irregular_forms" : [
+        {
+            "name" : "blimp:phenomenon=irregular_forms,method=multiple_choice_separate_original",
+            "metric": "exact_match",
+            "field" : "mean",
+            "split": "test",
+            "suffix": "---"
+        }
+    ],
+    "blimp_island_effects" : [
+        {
+            "name" : "blimp:phenomenon=island_effects,method=multiple_choice_separate_original",
+            "metric": "exact_match",
+            "field" : "mean",
+            "split": "test",
+            "suffix": "---"
+        }
+    ],
+    "blimp_quantifiers" : [
+        {
+            "name" : "blimp:phenomenon=quantifiers,method=multiple_choice_separate_original",
+            "metric": "exact_match",
+            "field" : "mean",
+            "split": "test",
+            "suffix": "---"
+        }
+    ],
+    "boolq": [
+        {
+            "name": "boolq",
+            "suffix": "data_augmentation=canonical",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "dyck_language": [
+        {
+            "name": "dyck_language_np=3",
+	        "suffix": "---",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "entity_matching_abt_buy": [
+        {
+            "name": "entity_matching:dataset=Abt_Buy",
+	        "suffix": "---",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "entity_matching_beer": [
+        {
+            "name": "entity_matching:dataset=Beer",
+            "metric": "exact_match",
+	    "suffix": "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "entity_matching_itunes": [
+        {
+            "name": "entity_matching:dataset=Dirty_iTunes_Amazon",
+            "metric": "exact_match",
+	    "suffix": "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "hellaswag": [
         {
             "name": "commonsense:dataset=hellaswag",
             "suffix": "data_augmentation=canonical",
@@ -78,16 +336,123 @@
             "split": "valid"
         }
     ],
-    "OpenBookQA": [
+    "ice": [
         {
-            "name": "commonsense:dataset=openbookqa",
-            "suffix": "data_augmentation=canonical",
-            "metric": "exact_match",
+            "suffix" : "---",
+            "name": "ice:gender=female",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "suffix" : "---",
+            "name": "ice:gender=male",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "suffix" : "---",
+            "name": "ice:subset=ea",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "suffix" : "---",
+            "name": "ice:subset=hk",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "suffix" : "---",
+            "name": "ice:subset=ind",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "suffix" : "---",
+            "name": "ice:subset=usa",
+            "metric": "bits_per_byte",
             "field": "mean",
             "split": "test"
         }
     ],
-    "MMLU": [
+    "ice_female": [
+        {
+            "suffix" : "---",
+            "name": "ice:gender=female",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "ice_male": [
+        {
+            "suffix" : "---",
+            "name": "ice:gender=male",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "ice_ea": [
+        {
+            "suffix" : "---",
+            "name": "ice:subset=ea",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "ice_hk": [
+        {
+            "suffix" : "---",
+            "name": "ice:subset=hk",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "ice_ind": [
+        {
+            "suffix" : "---",
+            "name": "ice:subset=ind",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "ice_usa": [
+        {
+            "suffix" : "---",
+            "name": "ice:subset=usa",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "legal_support": [
+        {
+            "name": "legal_support,method=multiple_choice_joint", 
+            "suffix" : "---",
+            "metric": "exact_match", 
+            "field": "mean", 
+            "split": "test"
+        }
+    ],
+    "lsat": [
+        {
+            "name": "lsat_qa:task=all",
+            "metric": "quasi_exact_match",
+            "suffix": "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu": [
         {
             "name": "mmlu:subject=abstract_algebra",
             "suffix": "data_augmentation=canonical",
@@ -124,12 +489,185 @@
             "split": "valid"
         }
     ],
-    "WikiText-103": [
+    "mmlu_abstract_algebra": [
         {
-            "name": "IGNORE-ME"
+            "name": "mmlu:subject=abstract_algebra",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "valid"
         }
     ],
-    "The Pile": [
+    "mmlu_college_chemistry": [
+        {
+            "name": "mmlu:subject=college_chemistry",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "valid"
+        }
+    ],
+    "mmlu_computer_security": [
+        {
+            "name": "mmlu:subject=computer_security",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "valid"
+        }
+    ],
+    "mmlu_econometrics": [
+        {
+            "name": "mmlu:subject=econometrics",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "valid"
+        }
+    ],
+    "mmlu_us_foreign_policy": [
+        {
+            "name": "mmlu:subject=us_foreign_policy",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "valid"
+        }
+    ],
+    "msmarco_regular": [
+        {
+            "name": "msmarco:track=regular,valid_topk=30",
+            "suffix": "data_augmentation=canonical",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "msmarco_trec": [
+        {
+            "name": "msmarco:track=trec,valid_topk=30",
+            "suffix": "data_augmentation=canonical",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "natural_qa_closed": [
+        {
+            "name": "natural_qa:mode=closedbook",
+            "metric": "exact_match",
+            "field": "mean",
+            "suffix": "data_augmentation=canonical",
+            "split": "valid"
+        }
+    ],
+    "natural_qa_open": [
+        {
+            "name": "natural_qa:mode=openbook_longans",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "suffix": "data_augmentation=canonical",
+            "split": "test"
+        }
+    ],
+    "openbookqa": [
+        {
+            "name": "commonsense:dataset=openbookqa",
+            "suffix": "data_augmentation=canonical",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "quac": [
+        {
+            "name": "quac",
+            "metric": "exact_match",
+            "field": "mean",
+            "suffix": "data_augmentation=canonical",
+            "split": "test"
+        }
+    ],
+    "synthetic_reasoning_nl": [
+        {
+            "name": "synthetic_reasoning_natural:difficulty=hard",
+            "suffix" : "---",
+            "metric": "f1_set_match",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "name": "synthetic_reasoning_natural:difficulty=easy",
+            "metric": "f1_set_match",
+            "suffix" : "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "synthetic_reasoning_nl_easy": [
+        {
+            "name": "synthetic_reasoning_natural:difficulty=hard",
+            "suffix" : "---",
+            "metric": "f1_set_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "synthetic_reasoning_nl_hard": [
+        {
+            "name": "synthetic_reasoning_natural:difficulty=easy",
+            "metric": "f1_set_match",
+            "suffix" : "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "synthetic_reasoning_abstract": [
+        {
+            "name": "synthetic_reasoning:mode=pattern_match",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test",
+            "suffix" : "---"
+        },
+        {
+            "name": "synthetic_reasoning:mode=variable_substitution",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test",
+            "suffix" : "---"
+        },
+        {
+            "name": "synthetic_reasoning:mode=induction",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test",
+            "suffix" : "---"
+        }
+    ],
+    "synthetic_reasoning_pattern_match": [
+        {
+            "name": "synthetic_reasoning:mode=pattern_match",
+            "suffix" : "---",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "synthetic_reasoning_variable_substitution": [
+        {
+            "name": "synthetic_reasoning:mode=variable_substitution",
+            "suffix" : "---",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "synthetic_reasoning_induction": [
+        {
+            "name": "synthetic_reasoning:mode=induction",
+            "suffix" : "---",
+            "metric": "quasi_exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "the_pile": [
         {
             "name": "the_pile:subset=ArXiv",
             "metric": "bits_per_byte",
@@ -167,7 +705,64 @@
             "split": "test"
         }
     ],
-    "TwitterAAE": [
+    "the_pile_arxiv" : [
+        {
+            "name" : "the_pile:subset=ArXiv",
+            "metric": "bits_per_byte",
+            "field" : "mean",
+            "split": "test"
+        }
+    ],
+    "the_pile_bookcorpus2" : [
+        {
+            "name" : "the_pile:subset=BookCorpus2",
+            "metric": "bits_per_byte",
+            "field" : "mean",
+            "split": "test"
+        }
+    ],
+    "the_pile_enron" : [
+        {
+            "name" : "the_pile:subset=Enron Emails",
+            "metric": "bits_per_byte",
+            "field" : "mean",
+            "split": "test"
+        }
+    ],
+    "the_pile_github" : [
+        {
+            "name" : "the_pile:subset=Github",
+            "metric": "bits_per_byte",
+            "field" : "mean",
+            "split": "test"
+        }
+    ],
+    "the_pile_pubmed" : [
+        {
+            "name" : "the_pile:subset=PubMed Central",
+            "metric": "bits_per_byte",
+            "field" : "mean",
+            "split": "test"
+        }
+    ],
+    "the_pile_wikipedia" : [
+        {
+            "name" : "the_pile:subset=Wikipedia (en)",
+            "metric": "bits_per_byte",
+            "field" : "mean",
+            "split": "test"
+        }
+    ],    
+    "truthful_qa": [
+        {
+            "name": "truthful_qa:task=mc_single,method=multiple_choice_joint",
+            "suffix" : "data_augmentation=canonical",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "valid"
+        }
+    ],
+    "twitter_aae": [
         {
             "name": "twitter_aae:demographic=white",
             "metric": "bits_per_byte",
@@ -181,86 +776,120 @@
             "split": "test"
         }
     ],
-    "ICE": [
+    "twitter_aae_white": [
         {
-            "name": "ice:gender=female",
-            "metric": "bits_per_byte",
-            "field": "mean",
-            "split": "test"
-        },
-        {
-            "name": "ice:gender=male",
-            "metric": "bits_per_byte",
-            "field": "mean",
-            "split": "test"
-        },
-        {
-            "name": "ice:subset=ea",
-            "metric": "bits_per_byte",
-            "field": "mean",
-            "split": "test"
-        },
-        {
-            "name": "ice:subset=hk",
-            "metric": "bits_per_byte",
-            "field": "mean",
-            "split": "test"
-        },
-        {
-            "name": "ice:subset=ind",
-            "metric": "bits_per_byte",
-            "field": "mean",
-            "split": "test"
-        },
-        {
-            "name": "ice:subset=usa",
+            "name": "twitter_aae:demographic=white",
             "metric": "bits_per_byte",
             "field": "mean",
             "split": "test"
         }
     ],
-    "WikiData": [
+    "twitter_aae_aa": [
+        {
+            "name": "twitter_aae:demographic=aa",
+            "metric": "bits_per_byte",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "wikidata": [
         {
             "name": "IGNORE-ME"
         }
     ],
-    "BLiMP": [
+    "wikifact_author": [
         {
-            "name": "blimp:phenomenon=binding,method=multiple_choice_separate_original",
-            "suffix": "---",
+            "name": "wikifact:k=5,subject=author",
             "metric": "exact_match",
             "field": "mean",
-            "split": "test"
-        },
-        {
-            "name": "blimp:phenomenon=irregular_forms,method=multiple_choice_separate_original",
             "suffix": "---",
+            "split": "test"
+        }
+    ],
+    "wikifact_currency": [
+        {
+            "name": "wikifact:k=5,subject=currency",
             "metric": "exact_match",
             "field": "mean",
-            "split": "test"
-        },
-        {
-            "name": "blimp:phenomenon=island_effects,method=multiple_choice_separate_original",
             "suffix": "---",
-            "metric": "exact_match",
-            "field": "mean",
             "split": "test"
-        },
+        }
+    ],
+    "wikifact_discoverer_or_inventor": [
         {
-            "name": "blimp:phenomenon=quantifiers,method=multiple_choice_separate_original",
-            "suffix": "---",
+            "name": "wikifact:k=5,subject=discoverer_or_inventor",
             "metric": "exact_match",
+            "suffix": "---",
             "field": "mean",
             "split": "test"
         }
     ],
-    "truthful_qa": [
+    "wikifact_instance_of": [
         {
-            "name": "truthful_qa:task=mc_single,method=multiple_choice_joint",
-            "suffix" : "data_augmentation=canonical",
+            "name": "wikifact:k=5,subject=instance_of",
             "metric": "exact_match",
             "field": "mean",
-            "split": "valid"
+            "suffix": "---",
+            "split": "test"
+        }
+    ],
+    "wikifact_medical_condition_treated": [
+        {
+            "name": "wikifact:k=5,subject=medical_condition_treated",
+            "metric": "exact_match",
+            "field": "mean",
+            "suffix": "---",
+            "split": "test"
+        }
+    ],
+    "wikifact_part_of": [
+        {
+            "name": "wikifact:k=5,subject=part_of",
+            "metric": "exact_match",
+            "field": "mean",
+            "suffix": "---",
+            "split": "test"
+        }
+    ],
+    "wikifact_place_of_birth": [
+        {
+            "name": "wikifact:k=5,subject=place_of_birth",
+            "metric": "exact_match",
+            "field": "mean",
+            "suffix": "---",
+            "split": "test"
+        }
+    ],
+    "wikifact_plaintiff": [
+        {
+            "name": "wikifact:k=5,subject=plaintiff",
+            "metric": "exact_match",
+            "suffix": "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "wikifact_position_held": [
+        {
+            "name": "wikifact:k=5,subject=position_held",
+            "metric": "exact_match",
+            "field": "mean",
+            "suffix": "---",
+            "split": "test"
+        }
+    ],
+    "wikifact_symptoms_and_signs": [
+        {
+            "name": "wikifact:k=5,subject=symptoms_and_signs",
+            "metric": "exact_match",
+            "suffix": "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "wikitext-103": [
+        {
+            "name": "IGNORE-ME"
         }
     ]
 }
