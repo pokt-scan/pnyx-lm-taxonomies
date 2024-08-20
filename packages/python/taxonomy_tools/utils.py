@@ -370,12 +370,18 @@ def get_taxonomy_nodes_metric(
 
     if method == "mutual_information":
         method_use = txm_metrics.node_pair_mutual_info_regression
+    elif method == "success_association":
+        method_use = txm_metrics.node_pair_success_association
     else:
         method_use = method
 
     # calculate metric.
-    # We abuse the pandas "corr" method here to inject any custom metric.
-    metrics_matrix = data_df.corr(method=method_use)
+    if method not in txm_metrics.permutation_methods:
+        # We abuse the pandas "corr" method here.
+        metrics_matrix = data_df.corr(method=method_use)
+    else:
+        # Do the calculation on each permutation
+        metrics_matrix = txm_metrics.apply_to_pairs(data_df, method_use)
 
     # Filter metrics matrix for edges positions only
     metrics_matrix_filtered = np.zeros_like(metrics_matrix.values)
@@ -499,6 +505,10 @@ def get_taxonomy_per_edge_metric(
             elif method == "mutual_information":
                 metrics_matrix_imbalanced[x, y] = (
                     txm_metrics.node_pair_mutual_info_regression(values_0, values_1)
+                )
+            elif method == "success_association":
+                metrics_matrix_imbalanced[x, y] = (
+                    txm_metrics.node_pair_success_association(values_0, values_1)
                 )
             else:
                 raise ValueError("Unknown method for metric : %s" % method)

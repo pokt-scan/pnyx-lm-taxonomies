@@ -201,11 +201,20 @@ def main():
         # Plot compacto de todos los nodos contra todos
         if metric_use == "mutual_information":
             method_use = txm_metrics.node_pair_mutual_info_regression
+        elif metric_use == "success_association":
+            method_use = txm_metrics.node_pair_mutual_info_regression
         else:
             method_use = metric_use
-        metric_matrix = nodes_data_df.loc[:, (nodes_data_df != 0).any()].corr(
-            method=method_use
-        )
+
+        # calculate metric.
+        use_data = nodes_data_df.loc[:, (nodes_data_df != 0).any()]
+        if metric_use not in txm_metrics.permutation_methods:
+            # We abuse the pandas "corr" method here.
+            metric_matrix = use_data.corr(method=method_use)
+        else:
+            # Do the calculation on each permutation
+            metric_matrix = txm_metrics.apply_to_pairs(use_data, method_use)
+
         # Create a heatmap for visualization
         im = plt.matshow(metric_matrix, cmap="coolwarm")
         im.set_clim([-1.0, 1.0])
