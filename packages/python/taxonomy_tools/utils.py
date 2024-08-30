@@ -52,7 +52,7 @@ def load_taxonomy(
                 graph_name = line.split("digraph")[-1].split("{")[0].strip()
                 if verbose:
                     print(print_prefix + "Found graph : %s" % graph_name)
-                graphs_dict[graph_name] = nx.DiGraph()
+                graphs_dict[graph_name] = nx.DiGraph(name=graph_name)
             elif "}" in line:
                 continue
             elif " -> " not in line:

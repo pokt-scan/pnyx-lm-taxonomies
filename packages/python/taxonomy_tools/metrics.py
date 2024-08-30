@@ -70,7 +70,7 @@ def node_pair_success_association(a: np.array, b: np.array) -> float:
     a, b = remove_nans(a, b)
 
     # Number of A smaller than B, ignore NaNs
-    num_asb = np.nan_to_num(np.sum(a < b), 0)
+    num_asb = np.nan_to_num(np.sum(a <= b), 0)
     # Number of total non-NaN entries
     support = np.sum(0 == (np.isnan(a) + np.isnan(b)))
 
