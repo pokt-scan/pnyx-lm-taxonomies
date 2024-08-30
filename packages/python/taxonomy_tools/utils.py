@@ -7,8 +7,7 @@ from typing import List, Tuple
 import os
 import json
 from scipy.stats import spearmanr, kendalltau
-from sklearn.feature_selection import mutual_info_regression
-
+from . import metrics as txm_metrics
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_dir = os.path.normpath(os.path.join(current_dir, os.pardir, os.pardir, os.pardir))
@@ -53,7 +52,7 @@ def load_taxonomy(
                 graph_name = line.split("digraph")[-1].split("{")[0].strip()
                 if verbose:
                     print(print_prefix + "Found graph : %s" % graph_name)
-                graphs_dict[graph_name] = nx.DiGraph()
+                graphs_dict[graph_name] = nx.DiGraph(name=graph_name)
             elif "}" in line:
                 continue
             elif " -> " not in line:
@@ -331,16 +330,9 @@ def get_taxonomy_datasets_node_dataframe(
     return data_df
 
 
-def custom_mi_reg(a, b):
-    a = a.reshape(-1, 1)
-    if np.sum(a) == 0 or np.sum(b) == 0:
-        return np.NaN
-    return mutual_info_regression(a, b)[0]
-
-
-def extract_edge_corr(node_name, taxonomy_graph, data_matrix, method_name) -> dict:
+def extract_edge_metric(node_name, taxonomy_graph, data_matrix, method_name) -> dict:
     """
-    Get a node correlation to its downstream nodes and return the data as dict
+    Get a node metric to its downstream nodes and return the data as dict
     """
     nodes_array = np.array(taxonomy_graph.nodes())
     node_dict = dict()
@@ -354,14 +346,14 @@ def extract_edge_corr(node_name, taxonomy_graph, data_matrix, method_name) -> di
         node_dict[edge[1]][method_name] = corr_val
 
         # Go down
-        node_dict[edge[1]]["nodes"] = extract_edge_corr(
+        node_dict[edge[1]]["nodes"] = extract_edge_metric(
             edge[1], taxonomy_graph, data_matrix, method_name
         )
 
     return node_dict
 
 
-def get_taxonomy_nodes_correlation(
+def get_taxonomy_nodes_metric(
     data_df: pd.DataFrame,
     taxonomy_graph: nx.classes.digraph.DiGraph,
     verbose: bool = False,
@@ -369,38 +361,48 @@ def get_taxonomy_nodes_correlation(
     method: str = "pearson",
 ) -> Tuple[np.array, np.array]:
     """
-    Using the taxonomy nodes data and the graph calculates the full correlations
-    matrix and also a version with only values where valid edges are defined.
+    Using the taxonomy nodes data and the graph calculates a metric on pairs of
+    nodes. By default it calculates the full correlations between nodes, but
+    several other custom methods are available.
+    The result is a metrics matrix and also a version with only values where
+    valid edges are defined.
     """
 
     if method == "mutual_information":
-        method_use = custom_mi_reg
+        method_use = txm_metrics.node_pair_mutual_info_regression
+    elif method == "success_association":
+        method_use = txm_metrics.node_pair_success_association
     else:
         method_use = method
 
-    # calculate correlation
-    correlation_matrix = data_df.corr(method=method_use)
+    # calculate metric.
+    if method not in txm_metrics.permutation_methods:
+        # We abuse the pandas "corr" method here.
+        metrics_matrix = data_df.corr(method=method_use)
+    else:
+        # Do the calculation on each permutation
+        metrics_matrix = txm_metrics.apply_to_pairs(data_df, method_use)
 
-    # Filter correlation matrix for edges positions only
-    correlation_matrix_filtered = np.zeros_like(correlation_matrix.values)
+    # Filter metrics matrix for edges positions only
+    metrics_matrix_filtered = np.zeros_like(metrics_matrix.values)
     nodes_array = np.array(taxonomy_graph.nodes())
     for edge in taxonomy_graph.edges:
         # Get adj matrix locations
         x = np.argwhere(nodes_array == edge[0])[0][0]
         y = np.argwhere(nodes_array == edge[1])[0][0]
-        corr_val = correlation_matrix.values[x, y]
-        if not np.isnan(corr_val):
-            correlation_matrix_filtered[x, y] = corr_val
+        metric_val = metrics_matrix.values[x, y]
+        if not np.isnan(metric_val):
+            metrics_matrix_filtered[x, y] = metric_val
     if verbose:
         print(print_prefix + "Total edges:")
         print(print_prefix + "%d" % len(taxonomy_graph.edges))
         print(print_prefix + "Measurable edges with data:")
         print(
             print_prefix
-            + "%d" % len(correlation_matrix_filtered[correlation_matrix_filtered != 0])
+            + "%d" % len(metrics_matrix_filtered[metrics_matrix_filtered != 0])
         )
 
-    # Create a dictionary with correlations over the taxonomy
+    # Create a dictionary with metrics over the taxonomy
     graph_json = dict()
     # Get nodes without incoming connections, the most higher level abilities
     root_nodes = [
@@ -409,14 +411,14 @@ def get_taxonomy_nodes_correlation(
     # Apply recursively
     for root in root_nodes:
         graph_json[root] = dict()
-        graph_json[root]["nodes"] = extract_edge_corr(
-            root, taxonomy_graph, correlation_matrix.values, method
+        graph_json[root]["nodes"] = extract_edge_metric(
+            root, taxonomy_graph, metrics_matrix.values, method
         )
 
-    return correlation_matrix, correlation_matrix_filtered, graph_json
+    return metrics_matrix, metrics_matrix_filtered, graph_json
 
 
-def get_taxonomy_per_edge_correlation(
+def get_taxonomy_per_edge_metric(
     taxonomy_graph: nx.classes.digraph.DiGraph,
     samples_dict: dict,
     method: str = "pearson",
@@ -424,17 +426,17 @@ def get_taxonomy_per_edge_correlation(
     print_prefix: str = "",
 ) -> np.array:
     """
-    Calculates the taxonomy edges correlation values using all possible data,
+    Calculates the taxonomy edges metric values using all possible data,
     this means that models are kept if they were tested on all datasets between
-    two nodes that define an edge. The result is a correlation factor with
-    potentially more models (data points) but the correlations of the different
+    two nodes that define an edge. The result is a metric value with
+    potentially more models (data points) but the metrics of the different
     edges are calculated with different number of samples.
     The used sample dictionary is the unfiltered one.
-    Returns a correlation matrix with values assigned only to valid edges.
+    Returns a metrics matrix with values assigned only to valid edges.
     """
 
-    # Calcualte the correlation matrix but using all the shared models between datasets edges
-    correlation_matrix_imbalanced = np.zeros(
+    # Calculate the metrics matrix but using all the shared models between datasets edges
+    metrics_matrix_imbalanced = np.zeros(
         (len(taxonomy_graph.nodes), len(taxonomy_graph.nodes))
     )
     nodes_array = np.array(taxonomy_graph.nodes())
@@ -495,21 +497,25 @@ def get_taxonomy_per_edge_correlation(
                 values_1[idx] /= count
         if np.sum(values_0) != 0 and np.sum(values_1) != 0:
             if method == "pearson":
-                correlation_matrix_imbalanced[x, y] = np.corrcoef(values_0, values_1)[
-                    1, 0
-                ]
+                metrics_matrix_imbalanced[x, y] = np.corrcoef(values_0, values_1)[1, 0]
             elif method == "spearman":
-                correlation_matrix_imbalanced[x, y], _ = spearmanr(values_0, values_1)
+                metrics_matrix_imbalanced[x, y], _ = spearmanr(values_0, values_1)
             elif method == "kendall":
-                correlation_matrix_imbalanced[x, y], _ = kendalltau(values_0, values_1)
+                metrics_matrix_imbalanced[x, y], _ = kendalltau(values_0, values_1)
             elif method == "mutual_information":
-                correlation_matrix_imbalanced[x, y] = custom_mi_reg(values_0, values_1)
+                metrics_matrix_imbalanced[x, y] = (
+                    txm_metrics.node_pair_mutual_info_regression(values_0, values_1)
+                )
+            elif method == "success_association":
+                metrics_matrix_imbalanced[x, y] = (
+                    txm_metrics.node_pair_success_association(values_0, values_1)
+                )
             else:
                 raise ValueError("Unknown method for metric : %s" % method)
         else:
-            correlation_matrix_imbalanced[x, y] = np.NaN
+            metrics_matrix_imbalanced[x, y] = np.NaN
 
-    # Create a dictionary with correlations over the taxonomy
+    # Create a dictionary with metrics over the taxonomy
     graph_json = dict()
     # Get nodes without incoming connections, the most higher level abilities
     root_nodes = [
@@ -518,8 +524,8 @@ def get_taxonomy_per_edge_correlation(
     # Apply recursively
     for root in root_nodes:
         graph_json[root] = dict()
-        graph_json[root]["nodes"] = extract_edge_corr(
-            root, taxonomy_graph, correlation_matrix_imbalanced, method
+        graph_json[root]["nodes"] = extract_edge_metric(
+            root, taxonomy_graph, metrics_matrix_imbalanced, method
         )
 
-    return correlation_matrix_imbalanced, graph_json
+    return metrics_matrix_imbalanced, graph_json

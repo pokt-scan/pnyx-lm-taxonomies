@@ -10,7 +10,7 @@ on:
       # applications
       taxonomy_analyzer:
         description: 'indicate that a change was made on taxonomy_analyzer app or any package dependency'
-        value: ${{ jobs.check.outputs.evaluator }}
+        value: ${{ jobs.check.outputs.taxonomy_analyzer }}
       
 
 jobs:
@@ -22,9 +22,7 @@ jobs:
       # languages
       python: ${{ steps.filter.outputs.python }}
       # applications
-      evaluator: ${{ steps.filter.outputs.evaluator }}
-      manager: ${{ steps.filter.outputs.manager }}
-      sampler: ${{ steps.filter.outputs.sampler }}
+      taxonomy_analyzer: ${{ steps.filter.outputs.taxonomy_analyzer }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3

@@ -15,7 +15,7 @@ Create a virtual environment in this project:
 python3 -m .venv venv-base
 ```
 
-Activate the new enviroment
+Activate the new environment
 ```bash
 source .venv/bin/activate
 ```

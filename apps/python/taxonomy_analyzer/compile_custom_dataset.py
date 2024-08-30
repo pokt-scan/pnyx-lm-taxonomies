@@ -1,15 +1,10 @@
 import numpy as np
-import sys
 import os
 import json
 import warnings
 import tqdm
 from copy import deepcopy
 import argparse
-
-current_dir = os.path.dirname(os.path.abspath(__file__))
-root_dir = os.path.normpath(os.path.join(current_dir, os.pardir, os.pardir, os.pardir))
-sys.path.insert(0, os.path.join(root_dir, "packages", "python"))
 
 
 def main():
