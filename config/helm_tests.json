@@ -300,6 +300,29 @@
             "split": "test"
         }
     ],
+    "entity_matching": [
+        {
+            "name": "entity_matching:dataset=Abt_Buy",
+	        "suffix": "---",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "name": "entity_matching:dataset=Beer",
+            "metric": "exact_match",
+	    "suffix": "---",
+            "field": "mean",
+            "split": "test"
+        },
+        {
+            "name": "entity_matching:dataset=Dirty_iTunes_Amazon",
+            "metric": "exact_match",
+	    "suffix": "---",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
     "entity_matching_abt_buy": [
         {
             "name": "entity_matching:dataset=Abt_Buy",
@@ -329,7 +352,7 @@
     ],
     "hellaswag": [
         {
-            "name": "commonsense:dataset=hellaswag",
+            "name": "commonsense:dataset=hellaswag,method=multiple_choice_separate_original",
             "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
@@ -445,7 +468,7 @@
     ],
     "lsat": [
         {
-            "name": "lsat_qa:task=all",
+            "name": "lsat_qa:task=all,method=multiple_choice_joint",
             "metric": "quasi_exact_match",
             "suffix": "---",
             "field": "mean",
@@ -454,35 +477,35 @@
     ],
     "mmlu": [
         {
-            "name": "mmlu:subject=abstract_algebra",
+            "name": "mmlu:subject=abstract_algebra,method=multiple_choice_joint",
             "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
             "split": "valid"
         },
         {
-            "name": "mmlu:subject=college_chemistry",
+            "name": "mmlu:subject=college_chemistry,method=multiple_choice_joint",
             "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
             "split": "valid"
         },
         {
-            "name": "mmlu:subject=computer_security",
+            "name": "mmlu:subject=computer_security,method=multiple_choice_joint",
             "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
             "split": "valid"
         },
         {
-            "name": "mmlu:subject=econometrics",
+            "name": "mmlu:subject=econometrics,method=multiple_choice_joint",
             "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
             "split": "valid"
         },
         {
-            "name": "mmlu:subject=us_foreign_policy",
+            "name": "mmlu:subject=us_foreign_policy,method=multiple_choice_joint",
             "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
@@ -491,7 +514,8 @@
     ],
     "mmlu_abstract_algebra": [
         {
-            "name": "mmlu:subject=abstract_algebra",
+            "name": "mmlu:subject=abstract_algebra,method=multiple_choice_joint",
+            "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
             "split": "valid"
@@ -499,7 +523,8 @@
     ],
     "mmlu_college_chemistry": [
         {
-            "name": "mmlu:subject=college_chemistry",
+            "name": "mmlu:subject=college_chemistry,method=multiple_choice_joint",
+            "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
             "split": "valid"
@@ -507,7 +532,8 @@
     ],
     "mmlu_computer_security": [
         {
-            "name": "mmlu:subject=computer_security",
+            "name": "mmlu:subject=computer_security,method=multiple_choice_joint",
+            "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
             "split": "valid"
@@ -515,7 +541,8 @@
     ],
     "mmlu_econometrics": [
         {
-            "name": "mmlu:subject=econometrics",
+            "name": "mmlu:subject=econometrics,method=multiple_choice_joint",
+            "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
             "split": "valid"
@@ -523,7 +550,8 @@
     ],
     "mmlu_us_foreign_policy": [
         {
-            "name": "mmlu:subject=us_foreign_policy",
+            "name": "mmlu:subject=us_foreign_policy,method=multiple_choice_joint",
+            "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
             "split": "valid"
@@ -567,7 +595,7 @@
     ],
     "openbookqa": [
         {
-            "name": "commonsense:dataset=openbookqa",
+            "name": "commonsense:dataset=openbookqa,method=multiple_choice_separate_calibrated",
             "suffix": "data_augmentation=canonical",
             "metric": "exact_match",
             "field": "mean",
