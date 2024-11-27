@@ -919,5 +919,893 @@
         {
             "name": "IGNORE-ME"
         }
+    ],
+    "mmlu_pro_subtask_psychology": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=psychology",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_physics": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=physics",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_philosophy": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=philosophy",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_other": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=other",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_math": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=math",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_law": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=law",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_history": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=history",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_health": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=health",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_engineering": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=engineering",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_economics": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=economics",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_computer_science": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=computer_science",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_chemistry": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=chemistry",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_business": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=business",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_pro_subtask_biology": [
+        {
+            "suffix": "---",
+            "name": "mmlu_pro:compilation=biology",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_boolean_expressions": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=boolean_expressions",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_causal_judgement": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=causal_judgement",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_date_understanding": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=date_understanding",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_disambiguation_qa": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=disambiguation_qa",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_dyck_languages": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=dyck_languages",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_formal_falacies": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=formal_falacies",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_geometric_shapes": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=geometric_shapes",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_hyperbaton": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=hyperbaton",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_logical_deduction_five_objects": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=logical_deduction_five_objects",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_logical_deduction_seven_objects": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=logical_deduction_seven_objects",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_logical_deduction_three_objects": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=logical_deduction_three_objects",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_movie_movie_recommendation": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=movie_recommendation",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_multistep_arithmetic": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=multistep_arithmetic",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_navigate": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=navigate",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_object_counting": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=object_counting",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_penguins_in_a_table": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=penguins_in_a_table",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_reasoning_about_objects": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=reasoning_about_objects",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_ruin_names": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=ruin_names",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_salient_translation_error_detection": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=salient_translation_error_detection",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_snarks": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=snarks",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_sports_understanding": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=sports_understanding",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_temporal_sequences": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=temporal_sequences",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_tracking_shuffled_objects_five_objects": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=tracking_shuffled_objects_five_objects",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_tracking_shuffled_objects_seven_objects": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=tracking_shuffled_objects_seven_objects",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_tracking_shuffled_objects_three_objects": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=tracking_shuffled_objects_three_objects",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_web_of_lies": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=web_of_lies",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_word_sorting": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=word_sorting",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_formal_fallacies": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=formal_fallacies",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_reasoning_about_colored_objects": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=reasoning_about_colored_objects",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "bbh_subtask_multistep_arithmetic_two": [
+        {
+            "suffix": "---",
+            "name": "bbh_subtask:compilation=multistep_arithmetic_two",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "humaneval": [
+        {
+            "suffix": "---",
+            "name": "humaneval:compilation=coding",
+            "metric": "pass_at_1",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "ifeval_strict": [
+        {
+            "suffix": "---",
+            "name": "ifeval:compilation=instruction_following",
+            "metric": "prompt_level_strict_acc",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "ifeval_loose": [
+        {
+            "suffix": "---",
+            "name": "ifeval:compilation=instruction_following",
+            "metric": "prompt_level_loose_acc",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_abstract_algebra": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=abstract_algebra,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_anatomy": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=anatomy,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_astronomy": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=astronomy,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_business_ethics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=business_ethics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_clinical_knowledge": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=clinical_knowledge,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_college_biology": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=college_biology,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_college_chemistry": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=college_chemistry,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_college_computer_science": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=college_computer_science,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_college_mathematics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=college_mathematics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_college_medicine": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=college_medicine,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_college_physics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=college_physics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_computer_security": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=computer_security,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_conceptual_physics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=conceptual_physics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_econometrics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=econometrics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_electrical_engineering": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=electrical_engineering,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_elementary_mathematics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=elementary_mathematics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_formal_logic": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=formal_logic,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_global_facts": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=global_facts,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_biology": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_biology,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_chemistry": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_chemistry,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_computer_science": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_computer_science,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_european_history": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_european_history,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_geography": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_geography,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_goverment_and_politics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_goverment_and_politics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_macroeconomics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_macroeconomics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_mathematics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_mathematics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_microeconomics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_microeconomics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_physics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_physics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_psychology": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_psychology,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_statistics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_statistics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_us_history": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_us_history,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_world_history": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_world_history,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_human_aging": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=human_aging,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_human_sexuality": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=human_sexuality,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_international_law": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=international_law,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_jurisprudence": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=jurisprudence,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_logical_fallacies": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=logical_fallacies,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_machine_learning": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=machine_learning,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_management": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=management,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_marketing": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=marketing,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_medical_genetics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=medical_genetics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_miscellaneous": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=miscellaneous,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_moral_disputes": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=moral_disputes,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_moral_scenarios": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=moral_scenarios,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_nutrition": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=nutrition,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_philosophy": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=philosophy,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_public_relations": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=public_relations,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_security_studies": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=security_studies,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_sociology": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=sociology,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_us_foreign_policy": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=us_foreign_policy,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_virology": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=virology,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_world_religions": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=world_religions,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_prehistory": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=prehistory,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_professional_law": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=professional_law,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_high_school_government_and_politics": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=high_school_government_and_politics,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_professional_accounting": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=professional_accounting,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_professional_psychology": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=professional_psychology,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
+    ],
+    "mmlu_subtask_explicit_professional_medicine": [
+        {
+            "name": "mmlu_subtask_explicit:compilation=professional_medicine,method=explicit",
+            "metric": "exact_match",
+            "field": "mean",
+            "split": "test"
+        }
     ]
+   
 }

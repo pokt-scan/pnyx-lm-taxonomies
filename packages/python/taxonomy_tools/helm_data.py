@@ -82,7 +82,10 @@ def read_helm_data(
             continue
 
         # Get list of associated tasks
-        task_list = dataset_config[dataset]
+        task_list = dataset_config.get(dataset, None)
+        if task_list is None:
+            print(print_prefix + "Dataset not defined in config.t : %s" % dataset)
+            continue
         tasks_results_dict = dict()
         ignored = False
         for task in task_list:
@@ -189,7 +192,9 @@ def read_helm_data(
                     except Exception:
                         pass
                 if metric_val is None:
-                    raise ValueError("Requested metric not found.")
+                    raise ValueError(
+                        f"Requested metric {task['metric']}/{task['field']} in split {task['split']} not found in {this_result}.\nTask Results:\n {task_results}"
+                    )
 
                 # track all values from the tasks associated to this dataset
                 if this_model not in tasks_results_dict.keys():

@@ -265,10 +265,11 @@ def get_taxonomy_datasets_metrics_dataframe(samples_dict: dict) -> pd.DataFrame:
             len(samples_dict[list(samples_dict.keys())[0]].keys()),
         )
     )
-    metrics_count_matrix = np.ones_like(metrics_data_matrix)
+    metrics_count_matrix = np.zeros_like(metrics_data_matrix)
     for idx, key in enumerate(samples_dict.keys()):
         metrics_data_matrix[idx, :] += list(samples_dict[key].values())
         metrics_count_matrix[idx, :] += 1
+    metrics_count_matrix[metrics_count_matrix == 0] = 1  # Just to avoid NaNs
     # average
     metrics_data_matrix /= metrics_count_matrix
 
@@ -299,7 +300,7 @@ def get_taxonomy_datasets_node_dataframe(
 
     # Matrix of [nodes x models]
     data_matrix = np.zeros((len(taxonomy_graph.nodes), len(use_models)))
-    count_matrix = np.ones_like(data_matrix)
+    count_matrix = np.zeros_like(data_matrix)
     node_names = list(taxonomy_graph.nodes)
     for idx, node in enumerate(node_names):
         node_dataset_list = taxonomy_graph.nodes[node].get("datasets", None)
@@ -324,6 +325,7 @@ def get_taxonomy_datasets_node_dataframe(
                     data_matrix[idx, :] += list(values_dict.values())
                     count_matrix[idx, :] += 1
     # average
+    count_matrix[count_matrix == 0] = 1  # To avoid NaNs
     data_matrix /= count_matrix
 
     data_df = pd.DataFrame(data_matrix.T, index=use_models, columns=node_names)
